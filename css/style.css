@@ -14,6 +14,8 @@ body{
 .header{
     background-color: #0a0a0a;
     padding: 33px 0 32px;
+    font-size: 24px;
+    line-height: 29px;
     color: #717171;
 }
 
@@ -31,13 +33,112 @@ body{
 
 .menu{
     display: flex;
+    flex-grow: 1;
+    flex-basis: 0;
 }
+
+.phone{
+    flex-grow: 1;
+    flex-basis: 0;
+    text-align: right;
+}
+
 
 .menu-item{
     padding-left: 30px;
 }
 
-.menu-link{
+.headline{
+    background-color: #f5f7f5;
+    text-align: center;
+    padding: 70px 0 40px;
+}
+
+.title{
+    text-transform: uppercase;
+    margin-bottom:0 0 40px;
+    color: #490E84;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 77px;
+}
+
+.headline-img{
+    margin-bottom: 25px ;
+}
+
+.headline-btn{
+    display: inline-block;
+    font-weight: 700;
     font-size: 24px;
     line-height: 29px;
+    text-transform: uppercase;
+    color: #ffff;
+    background-color: #490E84;
+    padding: 22px 117px 19px;
+    border-radius: 30px;
+}
+
+.new-title,
+.color-title{
+     margin: 50px 0px;
+     text-decoration: uppercase;
+     text-align: center;
+     color: #717171;
+     font-size: 32px;
+     line-height: 39px;
+     font-weight: 700;
+}
+
+.new-info{
+    display: flex;
+    align-items: center;
+}
+
+.new-text p{
+    max-width: 560px;
+    margin: 0 0 30px;
+}
+
+.new-text b{
+    max-width: 560px;
+    font-size: 20px;
+    line-height: 26px;
+    display: block;
+}
+
+.images-new{
+    margin-left: 190px;
+}
+
+.color{
+    padding-bottom: 150px;
+}
+
+.color-list{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.color-item img{
+    margin-bottom: 20px;
+}
+
+.color-itrm h3{
+    font-size: 20px;
+    line-height: 26px;
+    margin: 0 0 10px;
+}
+
+.color-item p{
+    margin: 0;
+}
+
+.contacts-inner{
+    display: flex;
+}
+
+.comtacts-form{
+    width: 100%;
 }
