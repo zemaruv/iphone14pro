@@ -1,3 +1,32 @@
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-in-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.no-js .fade-in,
+.no-js .fade-in-scroll {
+    opacity: 1;
+    transform: none;
+}
+
+
 a{
     text-decoration: none;
      color: inherit;
@@ -9,6 +38,10 @@ body{
     line-height: 18px;
     font-weight: 400;
     color:#0a0a0a;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 .header{
@@ -25,61 +58,142 @@ body{
    padding: 0 15px;
 }
 
-.nav{
+.nav {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+    padding: 10px 20px;
 }
 
-.menu{
+.menu {
     display: flex;
     flex-grow: 1;
-    flex-basis: 0;
+    justify-content: flex-start;
 }
 
-.phone{
-    flex-grow: 1;
-    flex-basis: 0;
-    text-align: right;
+.nav-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.nav-logo img {
+    transition: transform 0.5s ease; 
+}
+
+.nav-logo img:hover {
+    transform: rotate(360deg); 
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px; 
+}
+
+.nav-phone {
     font-size: 24px;
     line-height: 29px;
 }
 
-
 .menu-item{
-    padding-left: 30px;
+    padding-left: 20px;
 }
 
-.headline{
+.languages {
+    display: flex;
+    margin-left: 20px;
+}
+
+.nav-slash{
+    border:1px solid #717171;
+    margin: 5px;
+}
+
+.languages-item:hover{
+    color: #490E84;
+}
+.menu-link:hover{
+    color: #490E84;
+}
+
+.nav-phone:hover{
+    color: #490E84;
+}
+
+.headline {
     background-color: #f5f7f5;
     text-align: center;
     padding: 70px 0 40px;
 }
 
-.title{
+.title {
     text-transform: uppercase;
-    margin-bottom:0 0 40px;
+    margin-bottom: 40px;
     color: #490E84;
     font-weight: 700;
     font-size: 64px;
     line-height: 77px;
 }
 
-.headline-img{
-    margin-bottom: 25px ;
+.headline-img {
+    margin-bottom: 25px;
 }
 
-.headline-btn{
+.headline-btn {
     display: inline-block;
     font-weight: 700;
     font-size: 24px;
     line-height: 29px;
     text-transform: uppercase;
-    color: #ffff;
+    color: #fff;
     background-color: #490E84;
     padding: 22px 117px 19px;
     border-radius: 30px;
 }
+
+.headline-btn:hover {
+    background-color: #717171;
+}
+
+.modal {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none; /* По умолчанию скрыто */
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+}
+
+
 
 .new-title,
 .color-title{
@@ -110,11 +224,24 @@ body{
 }
 
 .images-new{
+    position: relative;
     margin-left: 190px;
 }
 
+.images-new{
+    transition: transform 0.3s ease-in-out;
+    height: auto;
+    display: block;  
+    max-width: 100%; 
+}
+
+.images-new:hover {
+    transform: scale(1.1); 
+}
+
+
 .color{
-    padding-bottom: 150px;
+    padding-bottom: 50px;
 }
 
 .color-list{
@@ -127,7 +254,7 @@ body{
     margin-bottom: 20px;
 }
 
-.color-itrm h3{
+.color-item h3{
     font-size: 20px;
     line-height: 26px;
     margin: 0 0 10px;
@@ -137,27 +264,52 @@ body{
     margin: 0;
 }
 
-.contacts-inner{
+.color-item img {
+    transition: transform 0.3s ease-in-out;
+}
+
+.color-item img:hover {
+    transform: scale(1.1);
+}
+
+.contacts-inner {
     display: flex;
-    background-color: #574B63; 
+    justify-content: space-between;
+    align-items: center;
+    background-color: #574B63;
     color: #fff;
+    margin-top: 50px;
+    padding: 40px;
 }
 
-.contacts-form{
-    width: 100%;
-    padding: 140px 90px;
-    text-align: center;
+.contacts-content {
+    max-width: 50%;       /* Ограничиваем ширину */
+    display: flex;        /* Делаем Flex-контейнер */
+    flex-direction: column; /* Ставим элементы в колонку */
+    align-items: center;    /* Центрируем по горизонтали */
+    justify-content: center;/* Центрируем по вертикали (если нужно) */
+    text-align: center;      /* Центрируем текст внутри */
 }
 
-.contacts-title{
-    margin: 0 0 60px;
-    text-transform: uppercase;
+
+.contacts-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center; /* Центрирует кнопку и другие элементы по горизонтали */
+}
+
+
+.contacts-title {
+    margin-bottom: 20px;
     font-size: 32px;
     line-height: 39px;
-    text-align: left;
+    text-transform: uppercase;
+    text-align: left; /* Можно оставить по левому краю */
 }
 
-.contacts-input{
+
+.contacts-input {
     padding: 10px 0;
     border: none;
     border-bottom: 1px solid #fff;
@@ -165,9 +317,10 @@ body{
     width: 100%;
     margin-bottom: 20px;
     background-color: #574B63;
+    outline: none;
 }
 
-.contacts-input::placeholder{
+.contacts-input::placeholder {
     font-size: 14px;
     line-height: 18px;
     color: #fff;
@@ -176,21 +329,65 @@ body{
     font-weight: 400;
 }
 
-.contacts-form p{
-    opacity:0.5;
+.contacts-input:focus::placeholder {
+    color: transparent;
+}
+
+.input-tel{
+    appearance: none; /* Убирает стандартный стиль селекта */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color:#574B63;
+    border: 1px solid #ccc;
+    color:#ccc;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.input-color {
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  width: 100%;
+  appearance: none; /* убирает стандартную стрелку */
+  background-color: #fff;
+  color: #333;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2210%22%20height%3D%226%22%20viewBox%3D%220%200%2010%206%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M0%200l5%206%205-6z%22%20fill%3D%22%23666%22/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 10px 6px;
+}
+
+.input-color:focus {
+  outline: none;
+  border-color: #000;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.contacts-form p {
+    opacity: 0.5;
     text-align: center;
     margin: 30px 0;
 }
 
-.contacts-form button{
-    border: none;
-    text-transform: uppercase;
-    color:#490E84;
-    background: white;
-    border-radius: 30px;
-    padding: 16px 81px;
-    font-weight: 400p;
-    cursor: pointer;
+.contacts-btn {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: center; /* Центрирует кнопку внутри flex-контейнера */
+}
+
+
+.contacts-btn:hover {
+    background-color: #490E84;
+    color: #fff;
 }
 
 .footer{
@@ -198,21 +395,76 @@ body{
 }
 
 .footer-link{
-    flex-basis: 0;
-    flex-grow: 1;
+    flex-grow: 0;
 }
 
-.footer-inner{
+.footer-phone{
+    flex-grow: 0;
+}
+
+.footer-logo {
+    position: absolute; /* Абсолютное позиционирование */
+    left: 50%;
+    transform: translateX(-50%); /* Центрирует логотип */
+    text-align: center;
+}
+
+.footer-logo img {
+    transition: transform 0.5s ease; /* Плавный переход */
+}
+
+.footer-logo img:hover {
+    transform: rotate(360deg); /* Вращение на 360 градусов */
+}
+
+.footer-phone {
+    font-size: 24px;
+    line-height: 29px;
+    margin-left: auto;
+} 
+
+.footer-phone:hover{
+    color: #490E84;
+} 
+
+.footer-link:hover{
+    color: #490E84;
+}
+
+.footer-inner {
     color: #717171;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
     align-items: center;
-    padding: 50px 0;
+    padding: 50px 20px; 
+    width: 100%;
 }
 
 .menu-btn{
     display: none;
 }
+
+.success-popup {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #000;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  z-index: 9999;
+  font-size: 16px;
+}
+
+.success-popup.show {
+  opacity: 1;
+  visibility: visible;
+}
+
 
 @media(max-width:1200px){
     .headline-img{

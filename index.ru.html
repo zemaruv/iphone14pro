@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Iphone 14 PRO</title>
+</head>
+
+<body>
+    <header class="header fade-in">
+        <div class="container">
+            <nav class="nav fade-in">
+                <button class="menu-btn" type="button">
+                    <span class="btn-line"></span>
+                    <span class="btn-line"></span>
+                    <span class="btn-line"></span>
+                    <span class="btn-line"></span>
+                </button>
+                <ul class="menu">
+                    <li class="menu-item">
+                        <a class="menu-link" href="#section1">Что нового</a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="#section2">Цвет</a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="#section3">Заказать</a>
+                    </li>
+                </ul>   
+                <a class="nav-logo">
+                    <img class="logo-img" src="images/logo.svg" alt="logo of website">
+                </a>
+                <div class="nav-right">
+                    <a class="nav-phone" href="tel:+38 050-456-56-56">+38 050-456-56-56</a>
+                    <div class="languages">
+                        <a class="languages-item" href="index.html">Укр</a>
+                        <div class="nav-slash"></div>
+                        <a class="languages-item" href="">Рус</a>
+                        <div class="nav-slash"></div>
+                        <a class="languages-item" href="index.eng.html">EN</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="headline fade-in">
+            <div class="container">
+                <h1 class="title fade-in-scroll">IPHONE 14 PRO</h1>
+                <img class="headline-img fade-in-scroll" src="images/iphone.png" alt="IPHONE 14 PRO">
+                <a class="headline-btn fade-in-scroll" href="#" id="openModal">ВЫБРАТЬ</a>
+            </div>
+        </section>
+        <div class="container">
+            <div class="modal" id="modal" style="display: none;">
+                <div class="modal-content">
+                    <span class="close" id="closeModal">&times;</span>
+                    <form class="contacts-form" id="modal-form" data-form="tg">
+                        <h2 class="contacts-title">ХОЧЕШЬ IPHONE 14 PRO?</h2>
+                        <input class="contacts-input" 
+                            type="text"
+                            placeholder="Ваше имя"
+                            id="user_name" 
+                            name="user_name"
+                            required/>
+
+                        <input class="contacts-input" 
+                            type="tel"
+                            placeholder="Номер телефона"
+                            id="user_tel" 
+                            name="user_tel"
+                            required/>
+                        
+                        <select class="input-color" 
+                            name="color"
+                            required>
+                            <option value="" disabled selected>Выбери желаемый цвет</option>
+                            <option value="Серебристый">Серебристый</option>
+                            <option value="Темно-фиолетовый">Тёмно-фиолетовый</option>
+                            <option value="Золотой">Золотой</option>
+                            <option value="Космический черный">Космический черный</option>
+                        </select>
+                        <p>В ближайшее время наш менеджер свяжется с Вами</p>
+                        <button class="contacts-btn" type="submit">ЗАКАЗАТЬ</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <section class="new fade-in-scroll">
+            <div class="container">
+                <h2 class="new-title fade-in-scroll" id="section1"> ЧТО НОВОГО</h2>
+                <div class="new-info">
+                    <div class="new-text fade-in-scroll">
+                        <p>
+                            Все модели оснащены однокристальной системой A16 Bionic, 48-мегапиксельной основной камерой и экранами ProMotion с защитой Ceramic Shield и частотным диапазоном 1 — 120 Гц, а также ускоренной памятью LPDDR5. Дизайн линейки обновлен, на фронтальной панели смартфонов два выреза. 
+                        </p>
+                        <p>
+                            Все iPhone 14 в США будут продаваться без лотка для SIM-карт: производитель заявляет, что улучшенная технология eSIM позволит перенести старые электронные сим-карты на новые смартфоны.
+                        </p>
+                        <p>
+                            Обновлены фронтальная камера (она снабжена автофокусом и быстрее распознает пользователя в условиях недостаточной освещенности) и сенсор основной камеры.
+                        </p>
+                        <b>
+                            iPhone 14 Pro вышел в новом дизайне — без фирменной «челки». Также в ассортименте появился новый цвет. В смартфоне, в отличие от «обычных» 14-х айфонов, установлен процессор A16 Bionic, который может за секунду производить 4 трлн операций с фото.
+                        </b>
+                    </div>
+                    <img class="images-new fade-in-scroll" src="images/iphone-news.jpg" alt="iphone">
+                </div>
+            </div>
+        </section>
+        <section class="color fade-in-scroll">
+            <div class="container">
+                <h2 class="color-title" id="section2">
+                    ВЫБЕРИ СВОЙ ЦВЕТ
+                </h2>
+                <ul class="color-list"> <!-- ul.color-list>li.color-item*4>img[src=images/color-$.jpg]+h3{Silver}+p{Серебристый} пример как быстро написать-->
+                    <li class="color-item">
+                        <img src="images/color-1.jpg" alt="">
+                        <h3 class="color-text-en fade-in-scroll">Silver</h3>
+                        <p class="color-text fade-in-scroll">Серебристый</p>
+                    </li>
+                    <li class="color-item">
+                        <img src="images/color-2.jpg" alt="">
+                        <h3 class="color-text-en fade-in-scroll">Deep Purple</h3>
+                        <p class="color-text fade-in-scroll">Темно-фиолетовый</p>
+                    </li>
+                    <li class="color-item">
+                        <img src="images/color-3.jpg" alt="">
+                        <h3 class="color-text-en fade-in-scroll">Gold</h3>
+                        <p class="color-text fade-in-scroll">Золотой</p>
+                    </li>
+                    <li class="color-item">
+                        <img src="images/color-4.jpg" alt="">
+                        <h3 class="color-text-en fade-in-scroll">Space Black</h3>
+                        <p class="color-text fade-in-scroll">Космический черный</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="contacts fade-in-scroll">
+            <div class="container">
+                <div class="contacts-inner">
+                    <div class="contacts-content">
+                        <h2 class="contacts-title" id="section3">ХОЧЕШЬ IPHONE 14 PRO?</h2>
+                       <form class="contacts-form" id="tg-form" data-form="tg">
+                            <input type="text" name="name" id="name" class="contacts-input" placeholder="Ваше имя" required>
+                            <input type="tel" name="phone" id="phone" class="contacts-input" placeholder="Номер телефона" required>
+                            <select class="input-color" 
+                            name="color"
+                            required>
+                            <option value="" disabled selected>Выбери желаемый цвет</option>
+                            <option value="Серебристый">Серебристый</option>
+                            <option value="Темно-фиолетовый">Тёмно-фиолетовый</option>
+                            <option value="Золотой">Золотой</option>
+                            <option value="Космический черный">Космический черный</option>
+                        </select>
+                            <p class="contacts-text">В ближайшее время наш менеджер свяжется с Вами</p>
+                            <button class="contacts-btn" type="submit">ЗАКАЗАТЬ</button>
+                        </form>
+                    </div>
+                    <img class="contacts-img" src="images/contact.jpg" alt="iphone">
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer fade-in-scroll"> 
+        <div class="container">
+            <div class="footer-inner">
+                <a class="footer-link" href="politics-of-confident.html" target="_blank">Политика конфиденциальности</a>
+                <a class="footer-logo">
+                    <img class="logo-img" src="images/logo.svg" alt="logo of website">
+                </a>
+                <a class="footer-phone" href="tel:+38 050-456-56-56">+38 050-456-56-56</a>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+    <div id="success-popup" class="success-popup">
+        <div class="success-popup-content">
+            <p>Заявка успешно отправлена!</p>
+        </div>
+    </div>
+
+</body>
+</html>
+
