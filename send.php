@@ -1,32 +1,62 @@
 <?php
-$token = "8101136085:AAHNaOp0SWxTJBBo-FpGRDrxuBUKAhf-9R4";
-$chat_id = "593216853";
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+header('Content-Type: text/plain; charset=utf-8');
 
-// Собираем данные с форм
-$name = $_POST['name'] ?? $_POST['user_name'] ?? '';
-$phone = $_POST['phone'] ?? $_POST['user_tel'] ?? '';
-$color = $_POST['color'] ?? '';
+// Настройки
+$token = "8101136085:AAHNaOp0SWxTJBBo-FpGRDrxuBUKAhf-9R4"; // Твой токен
+$chat_id = "593216853"; // Твой chat_id
 
-// Формируем текст для Telegram
-$arr = [
-  'Имя: ' => $name,
-  'Телефон: ' => $phone,
-  'Цвет: ' => $color
-];
+// Получаем данные с помощью null coalescing operator (PHP 7+)
+$name = trim($_POST['name'] ?? '');
+$phone = trim($_POST['phone'] ?? '');
+$color = trim($_POST['color'] ?? '');
 
-$txt = "";
-foreach($arr as $key => $value) {
-  if (!empty($value)) {
-    $txt .= "<b>".$key."</b> ".$value."%0A";
-  }
+if ($name === '' || $phone === '') {
+    echo 'error';
+    exit;
 }
 
-// Отправка в Telegram
-$sendToTelegram = fopen("https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&parse_mode=html&text={$txt}","r");
+// Формируем сообщение
+$message = "<b>Новая заявка с сайта</b>\n";
+$message .= "<b>Имя:</b> {$name}\n";
+$message .= "<b>Телефон:</b> {$phone}\n";
+if ($color !== '') {
+    $message .= "<b>Цвет:</b> {$color}\n";
+}
 
-if ($sendToTelegram) {
-  echo 'success';
+// Отправка через cURL, если доступно
+if (function_exists('curl_init')) {
+    $ch = curl_init("https://api.telegram.org/bot{$token}/sendMessage");
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, [
+        'chat_id' => $chat_id,
+        'parse_mode' => 'HTML',
+        'text' => $message
+    ]);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+    $response = curl_exec($ch);
+    $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    $error = curl_error($ch);
+    curl_close($ch);
+
+    if ($http_code === 200 && $response !== false) {
+        echo 'success';
+    } else {
+        file_put_contents(__DIR__ . '/telegram_error.log', date('Y-m-d H:i:s') . " | HTTP: {$http_code} | Error: {$error} | Response: {$response}\n", FILE_APPEND);
+        echo 'error';
+    }
 } else {
-  echo 'error';
+    // Если cURL недоступен — fallback на file_get_contents
+    $url = "https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&parse_mode=HTML&text=" . urlencode($message);
+    $result = file_get_contents($url);
+    if ($result !== false) {
+        echo 'success';
+    } else {
+        echo 'error';
+    }
 }
+
+exit;
 ?>
