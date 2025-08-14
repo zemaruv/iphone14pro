@@ -57,34 +57,20 @@
             <div class="modal" id="modal">
                 <div class="modal-content">
                     <span class="close" id="closeModal">&times;</span>
-                    <form class="contacts-form" data-form="tg" action="">
-                        <h2 class="contacts-title">ХОЧЕШ IPHONE 14 PRO?</h2>
-                        <input class="contacts-input" 
-                        type="text"
-                        placeholder="Ваше ім'я"
-                        id="user_name" 
-                        name="user_name"
-                        pattern="[A-Za-zА-Яа-яЁёЇїІіЄєҐґ]+([\s'-][A-Za-zА-Яа-яЁёЇїІіЄєҐґ]+)*"
-                        required/>
-
-                        <input class="contacts-input" 
-                        type="tel"
-                        placeholder="Номер телефону"
-                        id="user_tel" 
-                        name="user_tel"
-                        pattern="^\+380\d{9}$"
-                        required/>
-                        
-                        <select class="input-color" name="color" required>
-                            <option value="" disabled selected>Оберіть бажаний колір</option>
-                            <option value="silver">Сріблястий</option>
-                            <option value="dark">Темно-фіолетовий</option>
-                            <option value="gold">Золотий</option>
-                            <option value="black">Космічний чорний</option>
-                        </select>
-                        <p>Наш менеджер зв'яжеться з вами найближчим часом.</p>
-                        <button class="contacts-btn" type="submit">ЗАМОВИТИ</button>
-                    </form>
+                    <form class="contacts-form" id="modal-form" action="send.php" method="post" data-form="tg">
+                            <h2 class="contacts-title fade-in-scroll" id="section3">ХОЧЕШ IPHONE 14 PRO?</h2>
+                            <input type="text" name="name" class="contacts-input fade-in-scroll" placeholder="Ваше ім'я" required>
+                            <input type="tel" name="phone" class="contacts-input fade-in-scroll" placeholder="Номер телефону" required>
+                            <select class="input-color" name="color" required>
+                                <option value="" disabled selected>Оберіть бажаний колір</option>
+                                <option value="silver">Сріблястий</option>
+                                <option value="dark">Темно-фіолетовий</option>
+                                <option value="gold">Золотий</option>
+                                <option value="black">Космічний чорний</option>
+                            </select>
+                            <p class="contacts-text fade-in-scroll">Наш менеджер зв'яжеться з вами найближчим часом.</p>
+                            <button class="contacts-btn fade-in-scroll" type="submit">ЗАМОВИТИ</button>
+                        </form>
                 </div>
             </div>
         </div>
@@ -177,6 +163,14 @@
         <div class="success-popup-content">
             <p>Заявку успішно надіслано!</p>
         </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="close-btn">&times;</div>
+        <ul class="mobile-menu-list">
+            <li class="mobile-menu-item"><a class="mobile-menu-link" href="#section1">Что нового</a></li>
+            <li class="mobile-menu-item"><a class="mobile-menu-link" href="#section2">Цвет</a></li>
+            <li class="mobile-menu-item"><a class="mobile-menu-link" href="#section3">Заказать</a></li>
+        </ul>
     </div>
 </body>
 </html>

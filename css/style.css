@@ -161,7 +161,7 @@ html {
 
 .modal {
   position: fixed;
-  z-index: 1000;
+  z-index: 999;
   left: 0;
   top: 0;
   width: 100%;
@@ -498,35 +498,42 @@ html {
         flex-wrap: wrap;
        }
 }
-
 @media(max-width:940px){
     .images-new{
         display: none;
-       }
+    }
 
     .new-text p,
     .new-text b{
         max-width: 100%;
     }
 
-    .menu-btn{
+    .menu-btn {
         display: inline-block;
         width: 60px;
         height: 50px;
         background-color: transparent;
-        order: 1;
         border: none;
         cursor: pointer;
         position: relative;
         z-index: 50;
+        order: 1;
+        margin-right: 40px; /* отступ справа */
+    }
+
+    .nav-logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 10px;
     }
 
     .logo,
-    .phone{
+    .phone {
         position: relative;
     }
 
-    .btn-line{
+    .btn-line {
         position: absolute;
         left: 0;
         width: 100%;
@@ -539,58 +546,183 @@ html {
         top: 0;
     }
     .btn-line:nth-child(2){
-        top: 20px;
+        top: 16px;
     }
     .btn-line:nth-child(3){
-        top: 20px;
+        top: 32px;
     }
     .btn-line:nth-child(4){
-        top: 40px;
+        top: 48px;
     }
 
     .menu-open .btn-line:nth-child(1){
         transform: scaleX(0);
     }
     .menu-open .btn-line:nth-child(2){
-        transform: rotate(45deg) ;
+        transform: rotate(45deg);
+        top: 16px;
     }
     .menu-open .btn-line:nth-child(3){
         transform: rotate(-45deg);
+        top: 32px;
     }
     .menu-open .btn-line:nth-child(4){
         transform: scaleX(0);
     }
-    .menu{
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        top:0;
-        background-color: #0a0a0a;
+
+    /* Скрываем меню по умолчанию */
+
+      .menu{
+        display:none;
+        }
+        
+     .mobile-menu {
+        position: fixed;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* центр по экрану */
+        background: white;
+        padding: 50px 50px; /* немного отступов вокруг текста */
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         display: flex;
-        justify-content: center;
-        align-items: center;
         flex-direction: column;
-        transform: translateY(-100%);
-        transition: .3s ease;
+        align-items: center;
+        z-index: 9999;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+    .mobile-menu.open {
+    opacity: 1;
+    visibility: visible;
     }
 
-    .menu-open .menu{
-        transform: translateY(-0%);
+    .mobile-menu .close-btn {
+    align-self: flex-end;
+    font-size: 24px;
+    cursor: pointer;
+    margin-bottom: 10px;
     }
 
-    .menu-item{
-        padding: 50px 0;
-        font-size: 56px;
+    .mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     }
 
-    .images-new{
-        display: none;
+    .mobile-menu ul li {
+    margin: 10px 0;
     }
 
-    .phone{
+    .mobile-menu ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    }
+
+    .mobile-menu .close-btn {
+    align-self: flex-end;
+    font-size: 28px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    }
+
+    .mobile-menu.open {
+    opacity: 1;
+    visibility: visible;
+    }
+
+    .mobile-menu-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .mobile-menu-item {
+        margin-bottom: 15px;
+    }
+
+    .mobile-menu-link {
+        text-decoration: none;
+        font-size: 18px;
+        color: #000;
+    }
+}
+    /* При открытом меню показываем его */
+   .menu-open .menu {
+        display: block;
+    }
+
+    .menu-item {
+        padding: 20px 0;
+        font-size: 36px;
+        list-style: none;
+    }
+
+    .phone {
         text-align: center;
     }
+
+    .nav-right {
+        position: relative;
+        order: 0; /* чтобы был вначале */
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        justify-content: flex-start; /* слева */
+    }
+
+    /* Чтобы телефон и языки были рядом */
+    .nav-phone {
+        font-size: 18px;
+    }
+
+    .languages {
+        margin-left: 10px;
+    }
+
+
+    @media (max-width: 732px) {
+    .nav {
+        flex-direction: column;
+        align-items: center; /* по центру горизонтально */
+        gap: 15px; /* отступы между элементами */
+        padding: 15px 10px;
+    }
+
+  .nav-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav-phone {
+    font-size: 20px;
+  }
+
+  .languages {
+    margin-left: 0;
+    display: flex;
+    gap: 10px;
+  }
+
+  .nav-logo {
+    position: static; /* чтобы логотип занял место в колонке */
+    transform: none;
+  }
+
+  .menu-btn {
+    order: 0;
+    align-self: center;
+  }
+
+  /* Если меню нужно скрыть по-прежнему */
+  .menu {
+    display: none;
+  }
 }
 
 @media(max-width:768px){

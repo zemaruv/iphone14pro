@@ -20,7 +20,7 @@
                 </button>
                 <ul class="menu">
                     <li class="menu-item">
-                        <a class="menu-link" href="#section1">What's new</a>
+                        <a class="menu-link" href="#section1">What's New</a>
                     </li>
                     <li class="menu-item">
                         <a class="menu-link" href="#section2">Color</a>
@@ -30,16 +30,16 @@
                     </li>
                 </ul>   
                 <a class="nav-logo">
-                    <img class="logo-img" src="images/logo.svg" alt="logo of website">
+                    <img class="logo-img" src="images/logo.svg" alt="site logo">
                 </a>
                 <div class="nav-right">
                     <a class="nav-phone" href="tel:+38 050-456-56-56">+38 050-456-56-56</a>
                     <div class="languages">
-                        <a class="languages-item" href="index.html">Укр</a>
+                        <a class="languages-item" href="index.html">Ukr</a>
                         <div class="nav-slash"></div>
-                        <a class="languages-item" href="index.ru.html">Рус</a>
+                        <a class="languages-item" href="index.ru.html">Rus</a>
                         <div class="nav-slash"></div>
-                        <a class="languages-item" href="">EN</a>
+                        <a class="languages-item" href="index.eng.html">EN</a>
                     </div>
                 </div>
             </nav>
@@ -58,37 +58,19 @@
                 <div class="modal-content">
                     <span class="close" id="closeModal">&times;</span>
                     <form class="contacts-form" id="modal-form" action="send.php" method="post" data-form="tg">
-                        <h2 class="contacts-title">DO YOU WANT IPHONE 14 PRO?</h2>
-                        <input class="contacts-input" 
-                        type="text"
-                        placeholder="Your name"
-                        id="user_name" 
-                        name="user_name"
-                        pattern="[A-Za-zА-Яа-яЁёЇїІіЄєҐґ]+([\s'-][A-Za-zА-Яа-яЁёЇїІіЄєҐґ]+)*"
-                        required/>
-
-                        <input class="contacts-input" 
-                        type="tel"
-                        placeholder="Phone number"
-                        type="tel" 
-                        id="user_tel" 
-                        name="user_tel"
-                        pattern="^\+380\d{9}$"
-                        required/>
-                        
-                        <select class="input-color" name="color" 
-                        type="text"
-                        placeholder="Write the desired color"
-                        required>
-                        <option value="" disabled selected>Select the desired color</option>
-                        <option value="black">Silver</option>
-                        <option value="white">Dark purple</option>
-                        <option value="gold">Gold</option>
-                        <option value="purple">Space black</option>
-                        </select>
-                        <p>Our manager will contact you shortly.</p>
-                        <button class="contacts-btn" type="submit">ORDER</button>
-                    </form>
+                            <h2 class="contacts-title fade-in-scroll" id="section3">WANT AN IPHONE 14 PRO?</h2>
+                            <input type="text" name="name" class="contacts-input fade-in-scroll" placeholder="Your name" required>
+                            <input type="tel" name="phone" class="contacts-input fade-in-scroll" placeholder="Phone number" required>
+                            <select class="input-color" name="color" required>
+                                <option value="" disabled selected>Select desired color</option>
+                                <option value="silver">Silver</option>
+                                <option value="dark">Deep Purple</option>
+                                <option value="gold">Gold</option>
+                                <option value="black">Space Black</option>
+                            </select>
+                            <p class="contacts-text fade-in-scroll">Our manager will contact you shortly.</p>
+                            <button class="contacts-btn fade-in-scroll" type="submit">ORDER</button>
+                        </form>
                 </div>
             </div>
         </div>
@@ -98,13 +80,17 @@
                 <div class="new-info">
                     <div class="new-text fade-in-scroll">
                         <p>
-                            All models are equipped with the A16 Bionic single-chip system, a 48-megapixel main camera and ProMotion displays with Ceramic Shield protection and a frequency range of 1-120 Hz, as well as accelerated LPDDR5 memory. The design of the line has been updated, there are two cutouts on the front panel of the smartphones.                        </p>
+                            All models are equipped with the A16 Bionic system-on-chip, a 48-megapixel main camera, and ProMotion displays with Ceramic Shield protection and a 1–120 Hz refresh rate, as well as accelerated LPDDR5 memory. The design has been updated, with two cutouts on the front panel.
+                        </p>
                         <p>
-                            All iPhone 14s in the US will be sold without a SIM card tray: the manufacturer says that improved eSIM technology will allow old electronic SIM cards to be transferred to the new smartphones.                        </p>
+                            All iPhone 14s in the USA will be sold without a SIM card tray: the manufacturer states that the improved eSIM technology will allow transferring old electronic SIM cards to new smartphones.
+                        </p>
                         <p>
-                            The front camera (it has autofocus and recognizes the user faster in low light conditions) and the main camera sensor have been updated.                        </p>
+                            The front camera has been updated (with autofocus and fast recognition in low light) along with the main camera sensor.
+                        </p>
                         <b>
-                            The iPhone 14 Pro has a new design - without the signature "bangs". A new color has also appeared in the range. The smartphone, unlike the "regular" 14th iPhones, has an A16 Bionic processor, which can perform 4 trillion photo operations per second.                        </b>
+                            The iPhone 14 Pro got a new design — without the usual notch. A new color has also been added. The smartphone is powered by the A16 Bionic processor, which performs up to 4 trillion photo operations per second.
+                        </b>
                     </div>
                     <img class="images-new fade-in-scroll" src="images/iphone-news.jpg" alt="iphone">
                 </div>
@@ -112,9 +98,8 @@
         </section>
         <section class="color fade-in-scroll">
             <div class="container">
-                <h2 class="color-title" id="section2">
-                    CHOOSE YOUR COLOR                </h2>
-                <ul class="color-list"> <!-- ul.color-list>li.color-item*4>img[src=images/color-$.jpg]+h3{Silver}+p{Серебристый} пример как быстро написать-->
+                <h2 class="color-title" id="section2">CHOOSE YOUR COLOR</h2>
+                <ul class="color-list">
                     <li class="color-item">
                         <img src="images/color-1.jpg" alt="">
                         <h3 class="color-text-en fade-in-scroll">Silver</h3>
@@ -142,20 +127,17 @@
             <div class="container">
                 <div class="contacts-inner">
                     <div class="contacts-content">
-                        <form class="contacts-form" action="send.php" method="post" data-form="tg">
-                            <h2 class="contacts-title fade-in-scroll" id="section3">DO YOU WANT IPHONE 14 PRO?</h2>
+                        <form class="contacts-form" id="modal-form" action="send.php" method="post" data-form="tg">
+                            <h2 class="contacts-title fade-in-scroll" id="section3">WANT AN IPHONE 14 PRO?</h2>
                             <input type="text" name="name" class="contacts-input fade-in-scroll" placeholder="Your name" required>
                             <input type="tel" name="phone" class="contacts-input fade-in-scroll" placeholder="Phone number" required>
-                            <select class="input-color" name="color" 
-                                type="text"
-                                placeholder="Write the desired color"
-                                required>
-                                <option value="" disabled selected>Select the desired color</option>
-                                <option value="black">Silver</option>
-                                <option value="white">Dark purple</option>
+                            <select class="input-color" name="color" required>
+                                <option value="" disabled selected>Select desired color</option>
+                                <option value="silver">Silver</option>
+                                <option value="dark">Deep Purple</option>
                                 <option value="gold">Gold</option>
-                                <option value="purple">Space black</option>
-                             </select>
+                                <option value="black">Space Black</option>
+                            </select>
                             <p class="contacts-text fade-in-scroll">Our manager will contact you shortly.</p>
                             <button class="contacts-btn fade-in-scroll" type="submit">ORDER</button>
                         </form>
@@ -170,7 +152,7 @@
             <div class="footer-inner">
                 <a class="footer-link" href="politics-of-confident.html" target="_blank">Privacy Policy</a>
                 <a class="footer-logo">
-                    <img class="logo-img" src="images/logo.svg" alt="logo of website">
+                    <img class="logo-img" src="images/logo.svg" alt="site logo">
                 </a>
                 <a class="footer-phone" href="tel:+38 050-456-56-56">+38 050-456-56-56</a>
             </div>
@@ -179,8 +161,15 @@
     <script src="js/main.js"></script>
     <div id="success-popup" class="success-popup">
         <div class="success-popup-content">
-            <p>Application sent successfully!</p>
+            <p>Request sent successfully!</p>
         </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-menu-list">
+            <li class="mobile-menu-item"><a class="mobile-menu-link" href="#section1">Что нового</a></li>
+            <li class="mobile-menu-item"><a class="mobile-menu-link" href="#section2">Цвет</a></li>
+            <li class="mobile-menu-item"><a class="mobile-menu-link" href="#section3">Заказать</a></li>
+        </ul>
     </div>
 </body>
 </html>

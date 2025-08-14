@@ -36,6 +36,10 @@ if (function_exists('curl_init')) {
     ]);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
+    // Отключаем проверку SSL (для теста, не для продакшена)
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+
     $response = curl_exec($ch);
     $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     $error = curl_error($ch);
@@ -58,5 +62,6 @@ if (function_exists('curl_init')) {
     }
 }
 
-exit;
 ?>
+
+
