@@ -44,6 +44,12 @@ html {
     scroll-behavior: smooth;
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* убираем горизонтальный скролл */
+}
+
 .header{
     background-color: #0a0a0a;
     padding: 33px 0 32px;
@@ -64,7 +70,6 @@ html {
     justify-content: space-between;
     position: relative;
     width: 100%;
-    padding: 10px 20px;
 }
 
 .menu {
@@ -92,6 +97,7 @@ html {
     display: flex;
     align-items: center;
     gap: 20px; 
+    padding: 0 20px;
 }
 
 .nav-phone {
@@ -100,7 +106,8 @@ html {
 }
 
 .menu-item{
-    padding-left: 20px;
+   
+    margin-right: 20px;
 }
 
 .languages {
@@ -122,6 +129,10 @@ html {
 
 .nav-phone:hover{
     color: #490E84;
+}
+
+.mobile-menu{
+    display: none;
 }
 
 .headline {
@@ -167,7 +178,7 @@ html {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  display: none; /* По умолчанию скрыто */
+  display: none; 
   justify-content: center;
   align-items: center;
 }
@@ -182,7 +193,6 @@ html {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-
 .close {
   position: absolute;
   top: 10px;
@@ -192,8 +202,6 @@ html {
   color: #333;
   cursor: pointer;
 }
-
-
 
 .new-title,
 .color-title{
@@ -225,7 +233,7 @@ html {
 
 .images-new{
     position: relative;
-    margin-left: 190px;
+
 }
 
 .images-new{
@@ -283,12 +291,12 @@ html {
 }
 
 .contacts-content {
-    max-width: 50%;       /* Ограничиваем ширину */
-    display: flex;        /* Делаем Flex-контейнер */
-    flex-direction: column; /* Ставим элементы в колонку */
-    align-items: center;    /* Центрируем по горизонтали */
-    justify-content: center;/* Центрируем по вертикали (если нужно) */
-    text-align: center;      /* Центрируем текст внутри */
+    max-width: 50%;       
+    display: flex;        
+    flex-direction: column; 
+    align-items: center;   
+    justify-content: center;
+    text-align: center;      
 }
 
 
@@ -296,7 +304,7 @@ html {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  align-items: center; /* Центрирует кнопку и другие элементы по горизонтали */
+  align-items: center; 
 }
 
 
@@ -305,7 +313,7 @@ html {
     font-size: 32px;
     line-height: 39px;
     text-transform: uppercase;
-    text-align: left; /* Можно оставить по левому краю */
+    text-align: left; 
 }
 
 
@@ -334,7 +342,7 @@ html {
 }
 
 .input-tel{
-    appearance: none; /* Убирает стандартный стиль селекта */
+    appearance: none; 
     -webkit-appearance: none;
     -moz-appearance: none;
     background-color:#574B63;
@@ -381,9 +389,8 @@ html {
   font-size: 18px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  align-self: center; /* Центрирует кнопку внутри flex-контейнера */
+  align-self: center; 
 }
-
 
 .contacts-btn:hover {
     background-color: #490E84;
@@ -394,34 +401,42 @@ html {
     background-color: #0a0a0a;
 }
 
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  text-align: center;
+}
+
+.footer-phone {
+  white-space: nowrap;
+}
+
 .footer-link{
     flex-grow: 0;
 }
 
 .footer-phone{
     flex-grow: 0;
+    font-size: 24px;
+    line-height: 29px; 
 }
 
 .footer-logo {
-    position: absolute; /* Абсолютное позиционирование */
-    left: 50%;
-    transform: translateX(-50%); /* Центрирует логотип */
+    position: relative;  
+    transform: translateX(-50%); 
     text-align: center;
 }
 
 .footer-logo img {
-    transition: transform 0.5s ease; /* Плавный переход */
+    transition: transform 0.5s ease; 
 }
 
 .footer-logo img:hover {
-    transform: rotate(360deg); /* Вращение на 360 градусов */
+    transform: rotate(360deg); 
 }
-
-.footer-phone {
-    font-size: 24px;
-    line-height: 29px;
-    margin-left: auto;
-} 
 
 .footer-phone:hover{
     color: #490E84;
@@ -434,7 +449,7 @@ html {
 .footer-inner {
     color: #717171;
     display: flex;
-    justify-content: space-between; 
+    gap: 50px;
     align-items: center;
     padding: 50px 20px; 
     width: 100%;
@@ -465,6 +480,12 @@ html {
   visibility: visible;
 }
 
+@media(max-width:1200px){
+.contacts-content{
+    margin: auto;
+    padding-bottom: 30px;
+}
+}
 
 @media(max-width:1200px){
     .headline-img{
@@ -498,16 +519,9 @@ html {
         flex-wrap: wrap;
        }
 }
-@media(max-width:940px){
-    .images-new{
-        display: none;
-    }
 
-    .new-text p,
-    .new-text b{
-        max-width: 100%;
-    }
 
+@media(max-width:1020px){
     .menu-btn {
         display: inline-block;
         width: 60px;
@@ -518,7 +532,6 @@ html {
         position: relative;
         z-index: 50;
         order: 1;
-        margin-right: 40px; /* отступ справа */
     }
 
     .nav-logo {
@@ -570,19 +583,17 @@ html {
         transform: scaleX(0);
     }
 
-    /* Скрываем меню по умолчанию */
-
-      .menu{
+    .menu{
         display:none;
-        }
+    }
         
-     .mobile-menu {
+    .mobile-menu {
         position: fixed;
         top: 30%;
         left: 50%;
-        transform: translate(-50%, -50%); /* центр по экрану */
+        transform: translate(-50%, -50%); 
         background: white;
-        padding: 50px 50px; /* немного отступов вокруг текста */
+        padding: 50px 50px; 
         border-radius: 10px;
         box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         display: flex;
@@ -592,46 +603,46 @@ html {
         opacity: 0;
         visibility: hidden;
         transition: opacity 0.3s ease, visibility 0.3s ease;
-        }
+    }
 
     .mobile-menu.open {
-    opacity: 1;
-    visibility: visible;
+        opacity: 1;
+        visibility: visible;
     }
 
     .mobile-menu .close-btn {
-    align-self: flex-end;
-    font-size: 24px;
-    cursor: pointer;
-    margin-bottom: 10px;
+        align-self: flex-end;
+        font-size: 24px;
+        cursor: pointer;
+        margin-bottom: 10px;
     }
 
     .mobile-menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+        list-style: none;
+        padding: 0;
+        margin: 0;
     }
 
     .mobile-menu ul li {
-    margin: 10px 0;
+        margin: 10px 0;
     }
 
     .mobile-menu ul li a {
-    text-decoration: none;
-    color: black;
-    font-size: 18px;
+        text-decoration: none;
+        color: black;
+        font-size: 18px;
     }
 
     .mobile-menu .close-btn {
-    align-self: flex-end;
-    font-size: 28px;
-    cursor: pointer;
-    margin-bottom: 20px;
+        align-self: flex-end;
+        font-size: 28px;
+        cursor: pointer;
+        margin-bottom: 20px;
     }
 
     .mobile-menu.open {
-    opacity: 1;
-    visibility: visible;
+        opacity: 1;
+        visibility: visible;
     }
 
     .mobile-menu-list {
@@ -649,8 +660,37 @@ html {
         font-size: 18px;
         color: #000;
     }
+
+    #mobileMenu {
+        position: fixed;
+        margin: 20px auto;
+        background-color: rgba(0,0,0,0.95);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transform: translateY(-20px);
+        pointer-events: none; /* чтобы клики не работали когда закрыто */
+        transition: opacity 0.4s ease, transform 0.4s ease;
+        z-index: 1000;
 }
-    /* При открытом меню показываем его */
+
+    #mobileMenu.open {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto; /* включаем клики когда открыто */
+}
+
+    #mobileMenu .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 32px;
+        color: white;
+        cursor: pointer;
+        z-index: 1010;
+}
+
    .menu-open .menu {
         display: block;
     }
@@ -667,14 +707,13 @@ html {
 
     .nav-right {
         position: relative;
-        order: 0; /* чтобы был вначале */
+        order: 0; 
         display: flex;
         align-items: center;
         gap: 10px;
-        justify-content: flex-start; /* слева */
+        justify-content: flex-start; 
     }
 
-    /* Чтобы телефон и языки были рядом */
     .nav-phone {
         font-size: 18px;
     }
@@ -683,46 +722,56 @@ html {
         margin-left: 10px;
     }
 
+}
+@media(max-width:940px){
+    .images-new{
+        display: none;
+    }
 
-    @media (max-width: 732px) {
+    .new-text p,
+    .new-text b{
+        max-width: 100%;
+    }
+
+    
+@media (max-width: 732px) {
     .nav {
         flex-direction: column;
-        align-items: center; /* по центру горизонтально */
-        gap: 15px; /* отступы между элементами */
+        align-items: center; 
+        gap: 15px; 
         padding: 15px 10px;
     }
 
-  .nav-right {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
+    .nav-right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
 
-  .nav-phone {
-    font-size: 20px;
-  }
+    .nav-phone {
+        font-size: 20px;
+    }
 
-  .languages {
-    margin-left: 0;
-    display: flex;
-    gap: 10px;
-  }
+    .languages {
+        margin-left: 0;
+        display: flex;
+        gap: 10px;
+    }
 
-  .nav-logo {
-    position: static; /* чтобы логотип занял место в колонке */
-    transform: none;
-  }
+    .nav-logo {
+        position: static; 
+        transform: none;
+    }
 
-  .menu-btn {
-    order: 0;
-    align-self: center;
-  }
+    .menu-btn {
+        order: 0;
+        align-self: center;
+    }
 
-  /* Если меню нужно скрыть по-прежнему */
-  .menu {
-    display: none;
-  }
+    .menu {
+        display: none;
+    }
 }
 
 @media(max-width:768px){
@@ -740,15 +789,19 @@ html {
 }
 
 @media(max-width:640px){
-    .footer-inner{
-        padding: 20px 0;
-        flex-direction: column;
-    }
 
     .footer-inner .logo{
         margin: 15px 0;
     }
+
+       .footer-inner {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px; 
+        padding: 20px;
+    }
 }
+
 
 @media(max-width:560px){
     .title{
