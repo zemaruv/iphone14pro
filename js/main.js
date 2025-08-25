@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         el.classList.add('visible');
     });
 
-    // Анимация при скролле
+// Анимация при скролле
     const fadeScrollElements = document.querySelectorAll('.fade-in-scroll');
 
     const showOnScroll = () => {
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     window.addEventListener('scroll', showOnScroll);
-    showOnScroll(); // Запускаем проверку сразу
+    showOnScroll(); 
 });
 
 //Модальное окно
@@ -35,20 +35,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeModalBtn = document.getElementById('closeModal');
 
     if (openModalBtn && modal && closeModalBtn) {
-        // Открыть модалку
+        
         openModalBtn.addEventListener('click', e => {
             e.preventDefault();
-            modal.style.display = 'flex'; // показываем
+            modal.style.display = 'flex';
             document.body.style.overflow = 'hidden';
         });
 
-        // Закрыть по крестику
+       
         closeModalBtn.addEventListener('click', () => {
             modal.style.display = 'none';
             document.body.style.overflow = '';
         });
 
-        // Закрыть при клике вне модалки
+ 
         window.addEventListener('click', e => {
             if (e.target === modal) {
                 modal.style.display = 'none';
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(res => res.text())
             .then(result => {
                 if (result.trim() === 'success') {
-                    // Показать уведомление
+                    
                     const successPopup = document.getElementById('success-popup');
                     if (successPopup) {
                         successPopup.classList.add('show');
@@ -85,14 +85,13 @@ document.addEventListener('DOMContentLoaded', () => {
                         }, 4000);
                     }
 
-                    // Закрыть модальное окно
                     const modal = document.getElementById('modal');
                     if (modal) {
                         modal.style.display = 'none';
                         document.body.style.overflow = '';
                     }
 
-                    // Очистить форму
+                    
                     form.reset();
                 } else {
                     alert('Ошибка отправки!');
@@ -106,11 +105,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// Мобильное меню
 
 document.addEventListener('DOMContentLoaded', () => {
   const menuBtn = document.querySelector('.menu-btn');
   const mobileMenu = document.getElementById('mobileMenu');
-  const closeBtn = mobileMenu.querySelector('.close-btn'); // крестик внутри меню
+  const closeBtn = mobileMenu.querySelector('.close-btn'); 
 
   if (menuBtn && mobileMenu) {
     menuBtn.addEventListener('click', () => {
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-
+ 
 
 console.log('Submit обработан');
 
