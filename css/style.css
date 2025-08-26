@@ -2,14 +2,12 @@ a{
     text-decoration: none;
      color: inherit;
 }
-
-body{
-    overflow-y: auto !important;
+body {
     font-family: 'Inter', sans-serif;
     font-size: 14px;
     line-height: 18px;
     font-weight: 400;
-    color:#0a0a0a;
+    color: #0a0a0a;
 }
 
 html {
@@ -20,35 +18,31 @@ html, body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    overflow-y: auto; /* Гарантируем прокрутку по вертикали */
 }
 
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
+/* Анимации */
+.fade-in,
 .fade-in-scroll {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
+/* Класс для видимых элементов */
+.fade-in.visible,
 .fade-in-scroll.visible {
     opacity: 1;
     transform: translateY(0);
 }
 
+/* Если JS отключен */
 .no-js .fade-in,
 .no-js .fade-in-scroll {
     opacity: 1;
     transform: none;
 }
+
 
 .header{
     background-color: #0a0a0a;
@@ -486,6 +480,10 @@ html, body {
 
 @media(max-width:1200px){
 .contacts-content{
+    .fade-in,
+    .fade-in-scroll {
+        opacity: 1;
+        transform: none;}
     margin: auto;
     padding-bottom: 30px;
 }
