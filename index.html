@@ -1,4 +1,4 @@
-<?php
+<!--?php
 /* Настройки cookie для сессии — ВАЖНО: до session_start() */
 session_set_cookie_params([
   'lifetime' => 0,
@@ -14,7 +14,7 @@ if (empty($_SESSION['csrf_token'])) {
   $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
 ?>
-
+-->
 <!DOCTYPE html>
 <html lang="uk">
 <head>
