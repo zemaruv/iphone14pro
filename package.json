@@ -1,0 +1,35 @@
+{
+  "name": "iphone14pro",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zemaruv/iphone14pro.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zemaruv/iphone14pro/issues"
+  },
+  "homepage": "https://github.com/zemaruv/iphone14pro#readme",
+  "devDependencies": {
+    "csso": "^5.0.5",
+    "csso-cli": "^4.0.2",
+    "terser": "^5.43.1"
+  },
+  "dependencies": {
+    "acorn": "^8.15.0",
+    "buffer-from": "^1.1.2",
+    "commander": "^2.20.3",
+    "css-tree": "^2.2.1",
+    "mdn-data": "^2.0.28",
+    "source-map": "^0.6.1",
+    "source-map-js": "^1.2.1",
+    "source-map-support": "^0.5.21"
+  },
+  "description": ""
+}
