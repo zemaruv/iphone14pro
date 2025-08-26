@@ -94,4 +94,130 @@ if (empty($_SESSION['csrf_token'])) {
                     </div>
                     <picture>
                         <source srcset="/images-avif/iphone-news.avif" type="image/avif">
-                        <source srcset="/images-
+                        <source srcset="/images-webp/iphone-news.webp" type="image/webp">
+                        <img class="images-new fade-in-scroll" src="images/iphone-news.jpg" alt="iphone">
+                    </picture>
+                </div>
+            </div>
+        </section>
+        <section class="color fade-in-scroll">
+            <div class="container">
+                <h2 class="color-title" id="section2">CHOOSE YOUR COLOR</h2>
+                <ul class="color-list">
+                    <li class="color-item">
+                        <picture>
+                            <source srcset="/images-avif/color-1.avif" type="image/avif">
+                            <source srcset="/images-webp/color-1.webp" type="image/webp">
+                            <img class="contacts-img" src="images/color-1.jpg" alt="iphone">
+                        </picture>
+                        <h3 class="color-text-en fade-in-scroll">Silver</h3>
+                        <p class="color-text fade-in-scroll">Silver</p>
+                    </li>
+                    <li class="color-item">
+                        <picture>
+                            <source srcset="/images-avif/color-2.avif" type="image/avif">
+                            <source srcset="/images-webp/color-2.webp" type="image/webp">
+                            <img class="contacts-img" src="images/color-2.jpg" alt="iphone">
+                        </picture>
+                        <h3 class="color-text-en fade-in-scroll">Deep Purple</h3>
+                        <p class="color-text fade-in-scroll">Dark Purple</p>
+                    </li>
+                    <li class="color-item">
+                        <picture>
+                            <source srcset="/images-avif/color-3.avif" type="image/avif">
+                            <source srcset="/images-webp/color-3.webp" type="image/webp">
+                            <img class="contacts-img" src="images/color-3.jpg" alt="iphone">
+                        </picture>
+                        <h3 class="color-text-en fade-in-scroll">Gold</h3>
+                        <p class="color-text fade-in-scroll">Gold</p>
+                    </li>
+                    <li class="color-item">
+                        <picture>
+                            <source srcset="/images-avif/color-4.avif" type="image/avif">
+                            <source srcset="/images-webp/color-4.webp" type="image/webp">
+                            <img class="contacts-img" src="images/color-4.jpg" alt="iphone">
+                        </picture>
+                        <h3 class="color-text-en fade-in-scroll">Space Black</h3>
+                        <p class="color-text fade-in-scroll">Space Black</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="contacts fade-in-scroll">
+            <div class="container">
+                <div class="contacts-inner">
+                    <div class="contacts-content">
+                        <form class="contacts-form" id="modal-form" action="send.php" method="post" data-form="tg">
+                            <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
+                            <h2 class="contacts-title fade-in-scroll" id="section3">WANT IPHONE 14 PRO?</h2>
+                            <input type="text" name="name" class="contacts-input fade-in-scroll" placeholder="Your Name" required>
+                            <input type="tel" name="phone" class="contacts-input fade-in-scroll" placeholder="Phone Number" required>
+                            <select class="input-color" name="color" required>
+                                <option value="" disabled selected>Choose Color</option>
+                                <option value="silver">Silver</option>
+                                <option value="dark">Dark Purple</option>
+                                <option value="gold">Gold</option>
+                                <option value="black">Space Black</option>
+                            </select>
+                            <p class="contacts-text fade-in-scroll">Our manager will contact you shortly.</p>
+                            <button class="contacts-btn fade-in-scroll" type="submit">ORDER</button>
+                        </form>
+                    </div>
+                    <picture>
+                        <source srcset="/images-avif/contact.avif" type="image/avif">
+                        <source srcset="/images-webp/contact.webp" type="image/webp">
+                        <img class="contacts-img" src="images/contact.jpg" alt="iphone">
+                    </picture>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer fade-in-scroll"> 
+        <div class="container">
+            <div class="footer-inner">
+                <a class="footer-phone" href="tel:+380504565656">+38 050-456-56-56</a>
+                <a class="footer-logo">
+                    <img class="logo-img" src="images/logo.svg" alt="site logo">
+                </a>
+                <a class="footer-link" href="politics-of-confident.html" target="_blank">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="close-btn">&times;</div>
+        <ul class="mobile-menu-list">
+            <li class="mobile-menu-item"><a class="mobile-menu-link" href="#section1">What's New</a></li>
+            <li class="mobile-menu-item"><a class="mobile-menu-link" href="#section2">Color</a></li>
+            <li class="mobile-menu-item"><a class="mobile-menu-link" href="#section3">Order</a></li>
+        </ul>
+    </div>
+    <div class="container">
+            <div class="modal" id="modal">
+                <div class="modal-content">
+                    <span class="close" id="closeModal">&times;</span>
+                    <form class="contacts-form" id="form" action="send.php" method="post" data-form="tg">
+                            <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
+                            <h2 class="contacts-title fade-in-scroll" id="section3">WANT IPHONE 14 PRO?</h2>
+                            <input type="text" name="name" class="contacts-input fade-in-scroll" placeholder="Your Name" required>
+                            <input type="tel" name="phone" class="contacts-input fade-in-scroll" placeholder="Phone Number" required>
+                            <select class="input-color" name="color" required>
+                                <option value="" disabled selected>Choose Desired Color</option>
+                                <option value="silver">Silver</option>
+                                <option value="dark">Dark Purple</option>
+                                <option value="gold">Gold</option>
+                                <option value="black">Space Black</option>
+                            </select>
+                            <p class="contacts-text fade-in-scroll">Our manager will contact you shortly.</p>
+                            <button class="contacts-btn fade-in-scroll" type="submit">ORDER</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <div id="success-popup" class="success-popup">
+        <div class="success-popup-content">
+            <p>Your request has been successfully sent!</p>
+        </div>
+    </div>
+     <script src="/js/main.js"></script>
+</body>
+</html>
