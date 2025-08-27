@@ -125,7 +125,31 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
- 
+ //Scroll
+
+ const modal = document.getElementById('modal');
+const successPopup = document.getElementById('successPopup');
+
+function openModal() {
+  modal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  modal.style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+function openPopup() {
+  successPopup.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closePopup() {
+  successPopup.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
 
 console.log('Submit обработан');
 
